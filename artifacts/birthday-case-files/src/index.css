@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+}
+
+:root {
+  --background: 220 8% 7%;
+  --foreground: 46 13% 85%;
+  --border: 0 0% 23%;
+  --input: 0 0% 25%;
+  --ring: 0 67% 43%;
+  --card: 220 7% 10%;
+  --card-foreground: 46 13% 85%;
+  --card-border: 0 0% 24%;
+  --popover: 220 8% 9%;
+  --popover-foreground: 46 13% 85%;
+  --popover-border: 0 0% 23%;
+  --primary: 0 65% 41%;
+  --primary-foreground: 45 18% 94%;
+  --secondary: 42 18% 27%;
+  --secondary-foreground: 46 13% 85%;
+  --muted: 220 6% 15%;
+  --muted-foreground: 220 5% 58%;
+  --accent: 42 29% 48%;
+  --accent-foreground: 220 8% 7%;
+  --destructive: 0 65% 41%;
+  --destructive-foreground: 45 18% 94%;
+  --chart-1: 0 65% 41%;
+  --chart-2: 42 29% 48%;
+  --chart-3: 220 7% 52%;
+  --chart-4: 46 13% 85%;
+  --chart-5: 220 6% 15%;
+  --sidebar: 220 8% 7%;
+  --sidebar-foreground: 46 13% 85%;
+  --sidebar-border: 0 0% 23%;
+  --sidebar-primary: 0 65% 41%;
+  --sidebar-primary-foreground: 45 18% 94%;
+  --sidebar-accent: 220 6% 15%;
+  --sidebar-accent-foreground: 46 13% 85%;
+  --sidebar-ring: 0 67% 43%;
+  --app-font-sans: 'DM Sans', sans-serif;
+  --app-font-serif: Georgia, serif;
+  --app-font-mono: 'DM Mono', monospace;
+  --radius: 0.35rem;
+  --button-outline: rgba(255,255,255,.1);
+  --badge-outline: rgba(255,255,255,.05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255,255,255,.04);
+  --elevate-2: rgba(255,255,255,.09);
+  --shadow-2xs: none;
+  --shadow-xs: none;
+  --shadow-sm: none;
+  --shadow: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-xl: none;
+  --shadow-2xl: none;
+  --tracking-normal: 0;
+  --spacing: .25rem;
+}
+.dark { color-scheme: dark; }
+
+@layer base {
+  * { @apply border-border; box-sizing: border-box; }
+  html { scroll-behavior: smooth; background: #111214; }
+  body { @apply antialiased bg-background text-foreground; margin: 0; min-width: 320px; font-family: var(--app-font-sans); }
+  button { font: inherit; }
+  button:focus-visible, a:focus-visible { outline: 2px solid #a68b55; outline-offset: 4px; }
+  ::selection { color: #f4eee2; background: #792d2b; }
+}
+
+:root { --ink:#111214; --panel:#191a1c; --paper:#ded9cf; --dim:#aaa69e; --red:#8f2728; --gold:#9d8555; --silver:#7e8284; }
+#root { min-height: 100vh; }
+.grain::after { content:""; position:fixed; inset:0; z-index:20; pointer-events:none; opacity:.075; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E"); }
+.scanlines::before { content:""; position:absolute; inset:0; pointer-events:none; opacity:.12; background:repeating-linear-gradient(to bottom,transparent 0 3px,rgba(0,0,0,.35) 4px); }
+.condensed { font-family:'Barlow Condensed', Impact, sans-serif; text-transform:uppercase; letter-spacing:.01em; }
+.mono { font-family:'DM Mono', monospace; }
+.section-shell { position:relative; width:min(1120px, calc(100% - 48px)); margin:0 auto; padding:110px 0; border-bottom:1px solid #373638; }
+.eyebrow { font:10px 'DM Mono', monospace; letter-spacing:.18em; color:#a99b78; text-transform:uppercase; }
+.section-title { font:700 clamp(44px,8vw,88px)/.88 'Barlow Condensed',Impact,sans-serif; text-transform:uppercase; color:#e3ded4; }
+.file-stamp { display:inline-block; border:1px solid #8f2728; color:#b94540; padding:5px 9px; font:10px 'DM Mono',monospace; letter-spacing:.12em; transform:rotate(-3deg); }
+.paper-panel { background:linear-gradient(135deg,#232426,#18191b 70%); border:1px solid #3a3937; box-shadow:8px 10px 0 rgba(0,0,0,.18); }
+.photo-placeholder { position:relative; overflow:hidden; background:linear-gradient(145deg,#303032,#171719); border:1px solid #54514d; }
+.photo-placeholder::before { content:""; position:absolute; inset:8px; border:1px dashed #5b5852; }
+.photo-placeholder::after { content:"IMAGE NOT ON FILE"; position:absolute; bottom:18px; left:0; right:0; text-align:center; color:#827d74; font:10px 'DM Mono',monospace; letter-spacing:.13em; }
+.file-card { transition:transform .22s ease,border-color .22s ease,background-color .22s ease; }
+.file-card:hover { transform:translateY(-4px) rotate(-.25deg); border-color:#79504c; background-color:#202022; }
+.reveal { animation:reveal .55s both; }
+@keyframes reveal { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+.blink { animation:blink 1.1s steps(2,start) infinite; }
+@keyframes blink { to { visibility:hidden; } }
+.flash-in { animation:flash .55s ease-out; }
+@keyframes flash { 0% { filter:brightness(3); } 30% { filter:brightness(1.5); } 100% { filter:brightness(1); } }
+.timeline-line { background:linear-gradient(#8f2728,#5c5142 65%,transparent); }
+.quiet-mode { background:#090a0b; }
+@media (max-width:700px) {
+  .section-shell { width:calc(100% - 32px); padding:76px 0; }
+  .file-card:hover { transform:none; }
+}
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
+}

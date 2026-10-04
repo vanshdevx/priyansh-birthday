@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "The Birthday Case Files"
+description = "An interactive, cinematic birthday case file for a close friend, with dossier-style evidence, friendship lore, an interrogation mini-game, future plans, and a sincere final transmission. Personal details and media are designed to be easy to customize."
+version = "1.0.0"
+id = "artifacts/birthday-case-files"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22680
+
+[services.development]
+run = "pnpm --filter @workspace/birthday-case-files run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/birthday-case-files", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/birthday-case-files/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22680"
+BASE_PATH = "/"

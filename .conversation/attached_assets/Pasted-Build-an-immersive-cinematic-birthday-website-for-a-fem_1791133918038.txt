@@ -1,0 +1,571 @@
+Build an immersive, cinematic birthday website for a female friend. This is NOT a portfolio, landing page, business website, or conventional birthday card.
+
+The website should feel like an interactive mafia/crime-movie case file, heavily inspired by the visual language of GTA loading screens, crime films, underground hip-hop culture, classified government files, police dossiers, and 2000s crime-game interfaces.
+
+The experience should feel like the visitor has accidentally gained access to a confidential digital file about the birthday girl.
+
+CORE CONCEPT
+
+Title the experience:
+
+THE [NAME] FILES
+
+Subtitle:
+
+CLASSIFIED // EYES ONLY
+
+The entire website should tell a loose fictional story about the “case” of [NAME].
+
+She is the “subject” of an absurdly serious investigation.
+
+The humor should be dry, chaotic, slightly cringe, and playful — not romantic.
+
+The friendship dynamic is:
+
+* close friends
+* lots of banter and backchodi
+* inside jokes
+* shared experiences
+* occasionally deep conversations about life
+* talking about dreams and the future
+* growing up alongside each other
+
+Do NOT make it feel like a romantic confession.
+
+The emotional moments should be subtle and earned.
+
+⸻
+
+VISUAL DIRECTION
+
+Use a dark cinematic aesthetic.
+
+Primary colors:
+
+* near-black
+* charcoal
+* dirty white
+* deep crimson red
+* occasional muted gold
+* subtle chrome/silver
+
+Typography:
+
+* massive condensed display typography for dramatic headings
+* monospace/typewriter typography for classified information
+* clean sans-serif for readable content
+
+Visual references:
+
+* GTA loading screens
+* GTA IV / GTA V mission interfaces
+* old crime movies
+* mafia dossiers
+* police evidence boards
+* classified government documents
+* underground rap album artwork
+* disposable camera photography
+* security camera footage
+* old newspaper clippings
+* VHS/glitch aesthetics
+
+Use:
+
+* film grain
+* subtle scanlines
+* CRT effects
+* VHS distortion
+* camera flash effects
+* subtle chromatic aberration
+* redacted text
+* stamps
+* dossier labels
+* paper textures
+* Polaroids
+* evidence tags
+* fingerprints
+* timestamps
+* fake case numbers
+* security-camera overlays
+
+Do NOT make the page visually cluttered.
+
+It should feel deliberately designed and cinematic.
+
+Avoid:
+
+* hearts
+* pink gradients
+* excessive balloons
+* generic birthday templates
+* corporate cards
+* portfolio grids
+* “About Me” sections
+* professional UI
+* excessive animations that make the site annoying to use
+
+⸻
+
+INTRO — THE FILE
+
+When the site loads, do NOT immediately show a birthday message.
+
+Start with a black screen.
+
+Show:
+
+CLASSIFIED
+
+then:
+
+CASE NO. 04-18-[YEAR]
+
+SUBJECT: [NAME]
+
+STATUS: ACTIVE
+
+THREAT LEVEL: QUESTIONABLE
+
+AGE: [AGE]
+
+Add a subtle blinking cursor.
+
+Then:
+
+“Unauthorized access detected.”
+
+A red button:
+
+ACCESS FILE
+
+When clicked, transition into the main experience with a cinematic camera/glitch effect.
+
+⸻
+
+MAIN SCREEN — THE DOSSIER
+
+The main screen should feel like a digital crime investigation dashboard.
+
+Header:
+
+THE [NAME] FILES
+
+Under it:
+
+CONFIDENTIAL // DO NOT DISTRIBUTE
+
+Show several large interactive “evidence” files rather than normal navigation.
+
+For example:
+
+FILE 01
+
+THE SUBJECT
+
+FILE 02
+
+THE EVIDENCE
+
+FILE 03
+
+THE CREW
+
+FILE 04
+
+THE LORE
+
+FILE 05
+
+FUTURE OPERATIONS
+
+FILE 06
+
+FINAL TRANSMISSION
+
+Each should look like a physical case folder/evidence card.
+
+Do not make this feel like a website menu.
+
+It should feel like the user is opening different pieces of an investigation.
+
+⸻
+
+FILE 01 — THE SUBJECT
+
+Create a fake criminal profile.
+
+Large photograph of [NAME].
+
+Beside it:
+
+SUBJECT PROFILE
+
+NAME: [NAME]
+
+ALIAS: [NICKNAME]
+
+AGE: [AGE]
+
+KNOWN LOCATION: [CITY]
+
+OCCUPATION: Professional Menace
+
+THREAT LEVEL: 9.7/10
+
+Then create absurd categories:
+
+KNOWN OFFENCES
+
+* Excessive yapping
+* Questionable decisions
+* Emotional damage via sarcasm
+* Being unnecessarily dramatic
+* [INSIDE JOKE]
+* [INSIDE JOKE]
+
+CURRENT STATUS
+
+“Still somehow getting away with everything.”
+
+Make this section funny.
+
+⸻
+
+FILE 02 — THE EVIDENCE
+
+This is the memory section.
+
+Do NOT call it “Gallery.”
+
+Call it:
+
+EVIDENCE LOCKER
+
+Display photographs like evidence from an investigation.
+
+Each photo should have:
+
+* case number
+* date
+* location
+* evidence label
+* funny caption
+
+Example:
+
+EVIDENCE #017
+
+DATE: 14.08.25
+
+LOCATION: CLASSIFIED
+
+“Investigators still don’t know what the fuck was happening here.”
+
+Some captions should be genuinely warm.
+
+For example:
+
+“One of those days that ended up meaning more than we expected.”
+
+The contrast between stupid captions and sincere moments is important.
+
+Allow images to open in a cinematic fullscreen viewer.
+
+Add subtle camera shutter sounds if possible, but provide a mute toggle.
+
+⸻
+
+FILE 03 — THE CREW
+
+Create a “MOST WANTED” section for friends.
+
+Each person appears like a crime dossier / mugshot.
+
+Example:
+
+MOST WANTED
+
+[PHOTO]
+
+NAME: VANSH
+
+ROLE: PROFESSIONAL MENACE
+
+KNOWN FOR: [INSIDE JOKE]
+
+THREAT LEVEL: MODERATE
+
+Allow several friends to be added easily through a data structure.
+
+Make it look like a police evidence wall rather than a normal friend list.
+
+⸻
+
+FILE 04 — THE LORE
+
+Create an interactive timeline of the friendship.
+
+Do NOT call it “Our Journey.”
+
+Call it:
+
+THE LORE
+
+Each year/event appears as an investigation entry.
+
+Example:
+
+2023
+
+SUBJECTS ENCOUNTERED
+
+“Two idiots crossed paths.”
+
+2024
+
+SITUATION ESCALATED
+
+“Somehow, this became an actual friendship.”
+
+2025
+
+UNAUTHORIZED LEVELS OF TRUST DETECTED
+
+“Subjects began discussing their futures.”
+
+2026
+
+CURRENT STATUS
+
+“Still figuring out what the fuck we’re doing.”
+
+Allow the actual events and inside jokes to be customized later.
+
+⸻
+
+FILE 05 — FUTURE OPERATIONS
+
+This is the emotional section.
+
+Keep the mafia aesthetic, but make the content sincere.
+
+Title:
+
+FUTURE OPERATIONS
+
+Subtitle:
+
+PROJECTED TIMELINE: UNKNOWN
+
+Create two files:
+
+SUBJECT A
+
+Her dreams, ambitions, places she wants to visit, things she wants to experience.
+
+SUBJECT B
+
+My dreams, ambitions, places I want to visit, things I want to experience.
+
+Then:
+
+SHARED OBJECTIVE
+
+“Become people we’re proud of.”
+
+And below:
+
+“Nobody knows where this whole thing is going. Probably for the best.”
+
+Then smaller text:
+
+“But it’d be pretty cool if we got to look back at all this one day and realize we actually made it.”
+
+This should be the emotional high point.
+
+Do not make it romantic.
+
+⸻
+
+INTERACTIVE MINI GAME — INTERROGATION
+
+Add a small interactive section.
+
+Title:
+
+INTERROGATION ROOM
+
+Text:
+
+“The subject has refused to cooperate.”
+
+Present funny multiple-choice questions.
+
+Examples:
+
+WHO IS MORE LIKELY TO BECOME FAMOUS?
+
+A / B
+
+WHO MAKES WORSE DECISIONS?
+
+A / B
+
+WHO WOULD SURVIVE A ZOMBIE APOCALYPSE?
+
+A / B
+
+WHO WILL BECOME RICH FIRST?
+
+A / B
+
+WHO IS MORE LIKELY TO DISAPPEAR FOR 6 MONTHS AND COME BACK WITH A COMPLETELY DIFFERENT PERSONALITY?
+
+A / B
+
+Some answers should trigger funny animations/messages.
+
+For example:
+
+“Incorrect. Investigators are disappointed.”
+
+or
+
+“Correct. This was obvious.”
+
+⸻
+
+FINAL FILE — FINAL TRANSMISSION
+
+This should be completely different.
+
+After all the chaotic sections, transition into a quiet black screen.
+
+Remove the glitch effects.
+
+Remove the crime aesthetic.
+
+Show one meaningful photo.
+
+Then:
+
+FINAL TRANSMISSION
+
+Write a short birthday message that feels like it came from a close friend.
+
+The message should communicate:
+
+* I’m glad we became friends.
+* We’ve experienced a lot together.
+* We’ve both got a lot ahead of us.
+* Nobody really knows what they’re doing.
+* I hope she has a genuinely great year.
+* There are hopefully many more memories ahead.
+
+Keep it casual.
+
+Do NOT use romantic language.
+
+Do NOT use phrases like:
+“you’re the most important person in my life”
+“you’re my everything”
+“forever and always”
+“soulmate”
+etc.
+
+End with:
+
+HAPPY BIRTHDAY, [NAME].
+
+Pause.
+
+Then:
+
+CASE STATUS: ONGOING
+
+Then:
+
+MORE EVIDENCE EXPECTED.
+
+Finally:
+
+[ CLOSE FILE ]
+
+When clicked, display:
+
+“Nice try. You can’t escape the lore.”
+
+⸻
+
+MICRO-INTERACTIONS
+
+Make the site feel alive.
+
+Include subtle:
+
+* mouse hover distortion
+* camera flash transitions
+* file-opening animations
+* typewriter text
+* cursor blinking
+* glitch transitions
+* redacted text revealing itself
+* stamps appearing
+* evidence photos sliding onto a table
+* subtle sound effects
+* VHS/static transitions
+* occasional fake system errors
+
+But prioritize performance.
+
+Animations should be cinematic rather than excessive.
+
+⸻
+
+MUSIC
+
+Do NOT autoplay music.
+
+Create a small music-player control in the corner.
+
+It should look like a vintage car stereo / cassette player / underground radio.
+
+Allow the user to toggle music.
+
+Use a placeholder audio file that can easily be replaced.
+
+⸻
+
+MOBILE EXPERIENCE
+
+The site must be fully responsive.
+
+On mobile, the experience should still feel intentional rather than simply being a shrunken desktop site.
+
+Use vertical evidence files, swipeable photos, fullscreen images, and large touch targets.
+
+⸻
+
+IMPORTANT DESIGN RULE
+
+The website should NEVER feel like:
+
+“Here is my portfolio of memories.”
+
+It should feel like:
+
+“You have been given unauthorized access to an extremely classified investigation into this girl’s life.”
+
+The birthday itself should almost feel like the final reveal rather than the entire purpose of the site.
+
+Make it cinematic.
+
+Make it funny.
+
+Make it slightly ridiculous.
+
+Make it personal.
+
+Make the sincere moments hit harder because the rest of the experience is chaotic.
+
+The final result should feel like a mini interactive crime movie, not a birthday template.
