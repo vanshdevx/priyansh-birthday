@@ -5,11 +5,12 @@
  */
 export const caseFileData = {
   subject: {
-    name: '[NAME NOT PROVIDED]',
+    name: 'Priyansh',
     nickname: '[NICKNAME NOT PROVIDED]',
-    age: '[AGE NOT PROVIDED]',
+    age: '16',
     city: '[CITY NOT PROVIDED]',
-    birthdayYear: '[YEAR]',
+    birthdayMonthDay: '10-10',
+    caseYear: '2026',
     occupation: 'Professional Menace',
     threatLevel: '9.7 / 10',
     offenses: [

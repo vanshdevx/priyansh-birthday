@@ -70,7 +70,7 @@ function App() {
       <div className="scanlines absolute inset-0 opacity-30" />
       <div className="relative z-10 w-full max-w-[720px] border border-[#343332] bg-[#111214]/90 px-6 py-10 sm:px-14 sm:py-14">
         <div className="mb-12 flex items-center justify-between">
-          <span className="eyebrow">FEDERAL BUREAU / UNAUTHORIZED COPY</span><span className="mono text-xs text-[#777]">04—18—{person.birthdayYear}</span>
+          <span className="eyebrow">FEDERAL BUREAU / UNAUTHORIZED COPY</span><span className="mono text-xs text-[#777]">{person.birthdayMonthDay}—{person.caseYear}</span>
         </div>
         <div className="mb-8">
           <p className="condensed text-5xl font-bold tracking-[.06em] text-[#a73331] sm:text-7xl">CLASSIFIED<span className="blink">_</span></p>
@@ -78,7 +78,7 @@ function App() {
         </div>
         <div className="grid gap-x-12 gap-y-3 sm:grid-cols-2">
           {[
-            ['CASE NO.', `04-18-${person.birthdayYear}`],
+            ['CASE NO.', `${person.birthdayMonthDay}-${person.caseYear}`],
             ['SUBJECT', person.name],
             ['STATUS', 'ACTIVE'],
             ['THREAT LEVEL', 'QUESTIONABLE'],
@@ -116,7 +116,7 @@ function App() {
         <h1 className="condensed max-w-4xl text-[clamp(62px,12vw,150px)] font-extrabold leading-[.76] tracking-[-.025em]">THE<br /><span className="text-[#a33330]">{person.name}</span><br />FILES<span className="text-[#77736d]">.</span></h1>
         <p className="mono mt-8 max-w-[500px] text-xs leading-6 text-[#aaa69e] sm:text-sm">An absurdly serious investigation into one person’s continued ability to get away with everything.</p>
         <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-3 border-y border-[#393735] py-4 mono text-[9px] uppercase tracking-[.1em] text-[#8e8980]">
-          <span>CASE 04-18-{person.birthdayYear}</span><span>SUBJECT: {person.name}</span><span>THREAT: QUESTIONABLE</span>
+          <span>CASE {person.birthdayMonthDay}-{person.caseYear}</span><span>SUBJECT: {person.name}</span><span>THREAT: QUESTIONABLE</span>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {sections.map((section, i) => <button key={section.id} data-testid={`button-open-${section.id}`} onClick={() => openSection(section.id)} className="file-card paper-panel group relative min-h-[128px] overflow-hidden p-5 text-left">
