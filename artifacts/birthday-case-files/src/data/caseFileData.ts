@@ -58,7 +58,7 @@ export const caseFileData = {
     portrait: '',
     message: 'I’m really glad we became friends. We’ve already collected a ridiculous amount of stories, and somehow there’s still a lot ahead of us. Nobody has the whole life thing figured out, which is reassuring and mildly concerning. I hope this next year is genuinely good to you — full of the kind of days we’ll still be laughing about later. Here’s to more questionable plans, good conversations, and evidence we probably shouldn’t submit in court.',
   },
-  audioPath: '/mafia-radio.wav',
+  audioPath: '/tuyo-narcos-theme.mp3',
 };
 
 export type EvidenceRecord = (typeof caseFileData.evidence)[number];

@@ -103,7 +103,7 @@ function App() {
           <div className="hidden items-center gap-2 mono text-[9px] text-[#8f8a81] sm:flex"><span className="h-2 w-2 rounded-full bg-[#91302e]" />CASE STATUS: ACTIVE</div>
           <button onClick={toggleMusic} data-testid="button-music-toggle" aria-label={isPlaying ? 'Pause case-file radio' : 'Play case-file radio'} className="group flex min-h-11 items-center gap-2 border border-[#45413a] bg-[#202022] px-3 hover:border-[#8e7950]">
             {isPlaying ? <Volume2 size={16} className="text-[#ac965f]" /> : <VolumeX size={16} className="text-[#99948b]" />}
-            <span className="hidden text-left sm:block"><span className="block mono text-[9px] tracking-wider">CASE RADIO</span><span className="block mono text-[8px] text-[#77736c]">{isPlaying ? 'TRANSMITTING' : 'STANDBY'}</span></span>
+            <span className="hidden text-left sm:block"><span className="block mono text-[9px] tracking-wider">TUYO / CASE RADIO</span><span className="block mono text-[8px] text-[#77736c]">{isPlaying ? 'NOW PLAYING · RODRIGO AMARANTE' : 'STANDBY · MANUAL PLAY'}</span></span>
             <AudioLines size={14} className={isPlaying ? 'text-[#a88c54]' : 'text-[#5e5c58]'} />
           </button>
         </div>
