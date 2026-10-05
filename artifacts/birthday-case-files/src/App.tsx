@@ -226,7 +226,16 @@ function App() {
       <section id="final" className="quiet-mode relative scroll-mt-0 px-4 py-24 sm:py-36">
         <div className="mx-auto max-w-[760px]">
           <div className="mb-10 text-center mono text-[9px] tracking-[.2em] text-[#706d66]">— END OF INVESTIGATION / PRIVATE TRANSMISSION —</div>
-          <ImageOrPlaceholder src={caseFileData.finalTransmission.portrait} className="mx-auto aspect-[16/9] w-full max-w-[620px] grayscale" label="A meaningful photo, not supplied" />
+          <video
+            src={caseFileData.finalTransmission.video}
+            controls
+            playsInline
+            preload="metadata"
+            aria-label={`Final transmission video for ${person.name}`}
+            className="mx-auto block h-auto w-full max-w-[620px] border border-[#343436] bg-[#08090a]"
+          >
+            Your browser does not support embedded video.
+          </video>
           <div className="mx-auto mt-12 max-w-[600px]">
             <div className="eyebrow mb-6 text-center">FINAL TRANSMISSION</div>
             <p className="text-base leading-8 text-[#c8c5bf] sm:text-lg sm:leading-9">{caseFileData.finalTransmission.message}</p>
