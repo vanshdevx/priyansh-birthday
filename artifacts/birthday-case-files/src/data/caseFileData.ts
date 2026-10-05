@@ -10,7 +10,7 @@ export const caseFileData = {
     age: '16',
     city: '[CITY NOT PROVIDED]',
     birthdayMonthDay: '10-10',
-    caseYear: '2026',
+    caseYear: '2010',
     occupation: 'Professional Menace',
     threatLevel: '9.7 / 10',
     offenses: [
