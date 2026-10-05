@@ -1,15 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
-import { Activity, ArrowDown, ArrowLeft, ArrowRight, AudioLines, BadgeAlert, ChevronDown, CircleHelp, FileSearch, LockKeyhole, ShieldAlert, Volume2, VolumeX, X } from 'lucide-react';
+import { Activity, ArrowDown, ArrowLeft, ArrowRight, AudioLines, BadgeAlert, ChevronDown, CircleHelp, FileSearch, LockKeyhole, Volume2, VolumeX, X } from 'lucide-react';
 import { caseFileData, type EvidenceRecord } from './data/caseFileData';
 
 const sections = [
   { id: 'subject', file: 'FILE 01', title: 'THE SUBJECT', note: 'Profile & known offences' },
   { id: 'evidence', file: 'FILE 02', title: 'THE EVIDENCE', note: 'Selected exhibits' },
-  { id: 'crew', file: 'FILE 03', title: 'THE CREW', note: 'Known associates' },
-  { id: 'lore', file: 'FILE 04', title: 'THE LORE', note: 'Timeline of events' },
-  { id: 'future', file: 'FILE 05', title: 'FUTURE OPERATIONS', note: 'Projected timeline: unknown' },
-  { id: 'interrogation', file: 'FILE 06', title: 'INTERROGATION', note: 'Subject refuses to cooperate' },
-  { id: 'final', file: 'FILE 07', title: 'FINAL TRANSMISSION', note: 'Restricted until end of file' },
+  { id: 'future', file: 'FILE 03', title: 'FUTURE OPERATIONS', note: 'Projected timeline: unknown' },
+  { id: 'interrogation', file: 'FILE 04', title: 'INTERROGATION', note: 'Subject refuses to cooperate' },
+  { id: 'final', file: 'FILE 05', title: 'FINAL TRANSMISSION', note: 'Restricted until end of file' },
 ];
 
 function SectionHeading({ eyebrow, title, index }: { eyebrow: string; title: string; index: string }) {
@@ -120,7 +118,7 @@ function App() {
         </div>
         <div className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {sections.map((section, i) => <button key={section.id} data-testid={`button-open-${section.id}`} onClick={() => openSection(section.id)} className="file-card paper-panel group relative min-h-[128px] overflow-hidden p-5 text-left">
-            <div className="absolute right-4 top-4 mono text-[9px] text-[#66615a]">0{i + 1} / 06</div>
+            <div className="absolute right-4 top-4 mono text-[9px] text-[#66615a]">{String(i + 1).padStart(2, '0')} / {String(sections.length).padStart(2, '0')}</div>
             <div className="mono text-[9px] tracking-[.15em] text-[#a33a36]">{section.file}</div>
             <div className="condensed mt-3 text-[27px] font-bold leading-none tracking-wide text-[#ddd8ce]">{section.title}</div>
             <div className="mt-3 flex items-center justify-between mono text-[9px] text-[#858078]"><span>{section.note}</span><ArrowRight size={14} className="text-[#8b3834] transition-transform group-hover:translate-x-1" /></div>
@@ -167,32 +165,8 @@ function App() {
         </div>
       </section>
 
-      <section id="crew" className="section-shell scroll-mt-8">
-        <SectionHeading eyebrow="Persons of interest" title="Most Wanted" index="03" />
-        <div className="mb-8 flex items-center gap-2 mono text-[10px] text-[#9d978d]"><ShieldAlert size={14} className="text-[#a33a30]" /> ASSOCIATES UNDER OBSERVATION</div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {caseFileData.crew.map((member, index) => <article key={`${member.name}-${index}`} className="paper-panel p-4">
-            <div className="relative"><ImageOrPlaceholder src={member.image} className="aspect-[4/3] w-full" label={`${member.name} photo`} /><div className="absolute left-3 top-3 rotate-[-7deg] border border-[#92312e] px-2 py-1 mono text-[8px] tracking-[.14em] text-[#bd6158]">WANTED</div><div className="absolute bottom-3 right-3 mono text-[8px] text-[#bcb6ab]">SUBJECT 0{index + 1}</div></div>
-            <div className="mt-4 border-b border-[#3b3937] pb-3"><div className="eyebrow">NAME</div><h3 className="condensed mt-1 text-3xl font-bold">{member.name}</h3></div>
-            <div className="grid grid-cols-[100px_1fr] gap-y-3 py-4 mono text-[9px]"><span className="text-[#77736c]">ROLE</span><span>{member.role}</span><span className="text-[#77736c]">KNOWN FOR</span><span>{member.knownFor}</span><span className="text-[#77736c]">THREAT</span><span className="text-[#a98d59]">{member.threat}</span></div>
-          </article>)}
-        </div>
-      </section>
-
-      <section id="lore" className="section-shell scroll-mt-8">
-        <SectionHeading eyebrow="Events reconstructed" title="The Lore" index="04" />
-        <div className="relative ml-2 space-y-0 pl-8 before:absolute before:bottom-0 before:left-[5px] before:top-2 before:w-px before:bg-gradient-to-b before:from-[#9d302e] before:via-[#6f6250] before:to-transparent">
-          {caseFileData.lore.map((entry, i) => <article key={`${entry.year}-${i}`} className="relative border-b border-[#302f2e] py-7 first:pt-2">
-            <div className="absolute -left-[37px] top-[36px] h-[11px] w-[11px] border-2 border-[#a33b36] bg-[#17181a]" />
-            <div className="flex flex-wrap items-baseline gap-x-5 gap-y-2"><span className="condensed text-4xl font-bold text-[#a38b5d]">{entry.year}</span><span className="mono text-[10px] tracking-[.13em] text-[#a13b37]">{entry.title}</span></div>
-            <p className="mt-3 max-w-2xl text-sm leading-6 text-[#c6c1b8]">{entry.text}</p>
-            <div className="mt-3 mono text-[8px] tracking-[.13em] text-[#68645d]">RECORD {String(i + 1).padStart(2, '0')} — SOURCE: TWO UNRELIABLE WITNESSES</div>
-          </article>)}
-        </div>
-      </section>
-
       <section id="future" className="section-shell scroll-mt-8">
-        <SectionHeading eyebrow="Projected timeline: unknown" title="Future Operations" index="05" />
+        <SectionHeading eyebrow="Projected timeline: unknown" title="Future Operations" index="03" />
         <div className="grid gap-4 md:grid-cols-2">
           {[['SUBJECT A', caseFileData.future.subjectA], ['SUBJECT B', caseFileData.future.subjectB]].map(([label, plans]) => <div className="paper-panel p-6 sm:p-8" key={label as string}>
             <div className="eyebrow mb-5">{label as string} / UNCONFIRMED AMBITIONS</div>
@@ -209,7 +183,7 @@ function App() {
       </section>
 
       <section id="interrogation" className="section-shell scroll-mt-8">
-        <SectionHeading eyebrow="Interview recording 06-A" title="Interrogation Room" index="06" />
+        <SectionHeading eyebrow="Interview recording 04-A" title="Interrogation Room" index="04" />
         <div className="paper-panel p-5 sm:p-8">
           <div className="mb-7 flex items-center gap-3 border-b border-[#3b3936] pb-5"><CircleHelp size={18} className="text-[#a58c58]" /><p className="mono text-xs text-[#b9b3a9]">“The subject has refused to cooperate.”</p></div>
           <div className="space-y-8">
@@ -240,7 +214,7 @@ function App() {
               <div className="mono text-xs tracking-[.14em] text-[#aaa59b]">CASE STATUS: ONGOING</div>
               <div className="mono mt-3 text-[10px] tracking-[.16em] text-[#77736c]">MORE EVIDENCE EXPECTED.</div>
               <button data-testid="button-close-file" onClick={() => setClosedResponse(true)} className="mt-10 min-h-12 border border-[#77736a] px-8 mono text-[10px] tracking-[.18em] text-[#d2cdc4] transition-colors hover:border-[#a93a37] hover:bg-[#351b1b]">[ CLOSE FILE ]</button>
-              {closedResponse && <p role="status" className="reveal mt-5 mono text-xs text-[#b49b66]">Nice try. You can’t escape the lore.</p>}
+              {closedResponse && <p role="status" className="reveal mt-5 mono text-xs text-[#b49b66]">Nice try. The case remains open.</p>}
             </div>
           </div>
         </div>

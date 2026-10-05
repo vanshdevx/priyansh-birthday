@@ -30,17 +30,6 @@ export const caseFileData = {
     { id: '031', date: '[DATE]', location: '[LOCATION]', label: 'UNEXPECTEDLY IMPORTANT', caption: 'One of those days that ended up meaning more than we expected.', image: '' },
     { id: '046', date: '[DATE]', location: '[LOCATION]', label: 'UNAUTHORIZED JOY', caption: '[ADD A REAL MEMORY OR INSIDE JOKE]', image: '' },
   ],
-  crew: [
-    { name: '[FRIEND NAME]', role: 'Professional Menace', knownFor: '[INSIDE JOKE / HABIT]', threat: 'MODERATE', image: '' },
-    { name: '[FRIEND NAME]', role: 'Unlicensed Adviser', knownFor: '[INSIDE JOKE / HABIT]', threat: 'UNASSESSED', image: '' },
-    { name: '[FRIEND NAME]', role: 'Accomplice, Allegedly', knownFor: '[INSIDE JOKE / HABIT]', threat: 'PENDING', image: '' },
-  ],
-  lore: [
-    { year: '[YEAR]', title: 'SUBJECTS ENCOUNTERED', text: '[HOW THIS ACTUALLY STARTED — ADD LATER]' },
-    { year: '[YEAR]', title: 'SITUATION ESCALATED', text: '[A REAL SHARED MEMORY OR RUNNING JOKE]' },
-    { year: '[YEAR]', title: 'TRUST LEVELS INCREASED', text: 'Somewhere between the jokes, the real conversations showed up.' },
-    { year: 'ONGOING', title: 'CURRENT STATUS', text: 'Still figuring out what we’re doing. Frankly, so is everyone.' },
-  ],
   future: {
     subjectA: ['[HER DREAM / AMBITION]', '[A PLACE SHE WANTS TO SEE]', '[A THING SHE WANTS TO EXPERIENCE]'],
     subjectB: ['[YOUR DREAM / AMBITION]', '[A PLACE YOU WANT TO SEE]', '[A THING YOU WANT TO EXPERIENCE]'],
