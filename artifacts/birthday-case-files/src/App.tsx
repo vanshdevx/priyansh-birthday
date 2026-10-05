@@ -171,18 +171,50 @@ function App() {
 
       <section id="evidence" className="section-shell scroll-mt-8">
         <SectionHeading eyebrow="Memory records" title="Evidence Locker" index="02" />
-        <p className="mb-8 max-w-xl text-sm leading-6 text-[#a7a198]">Exhibits recovered from an ongoing friendship. Some context may have been lost. Some was never present.</p>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {caseFileData.evidence.map((item, i) => <button data-testid={`button-evidence-${item.id}`} onClick={() => setViewerIndex(i)} className="file-card paper-panel group p-3 text-left" key={item.id}>
-            <div className="relative rotate-[-1deg] bg-[#cbc5b9] p-2 pb-4">
-              <ImageOrPlaceholder src={item.image} className="aspect-[4/3] w-full" label={`Evidence ${item.id}`} />
-              <div className="absolute right-4 top-4 rotate-6 border border-[#a53a36] bg-[#242426]/80 px-2 py-1 mono text-[8px] tracking-wider text-[#c77b70]">EXHIBIT</div>
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+          <p className="max-w-xl text-sm leading-6 text-[#a7a198]">Exhibits recovered from an ongoing friendship. Some context may have been lost. Some was never present.</p>
+          <div className="flex items-center gap-2 mono text-[9px] tracking-[.12em] text-[#89847a]"><span className="h-px w-7 bg-[#9d3834]" />{String(caseFileData.evidence.length).padStart(2, '0')} RECORDS / UNSOLVED</div>
+        </div>
+        <div className="evidence-board relative isolate overflow-hidden p-4 sm:p-7">
+          <div className="evidence-threads pointer-events-none absolute inset-0" aria-hidden="true" />
+          <div className="relative z-10 mb-6 flex flex-wrap items-center justify-between gap-4 border-b border-[#3c3934] pb-5">
+            <div className="flex items-center gap-3">
+              <div className="grid h-9 w-9 place-items-center border border-[#69413a] bg-[#261c1b] text-[#b14a42]"><FileSearch size={16} strokeWidth={1.4} /></div>
+              <div>
+                <div className="mono text-[9px] tracking-[.15em] text-[#c2b8a4]">INVESTIGATION WALL / RECORDS RECOVERED</div>
+                <div className="mono mt-1 text-[8px] text-[#77736c]">Pinned for review · chronology uncertain</div>
+              </div>
             </div>
-            <div className="mt-4 flex items-center justify-between mono text-[9px] text-[#aaa398]"><span>EVIDENCE #{item.id}</span><span>{item.date}</span></div>
-            <div className="mono mt-2 text-[8px] tracking-[.12em] text-[#8f302e]">{item.label}</div>
-            <p className="mt-2 min-h-[52px] text-xs leading-5 text-[#c6c1b7]">“{item.caption}”</p>
-            <div className="mt-3 border-t border-[#393735] pt-2 mono text-[8px] text-[#77736b]">LOC: {item.location} <span className="float-right">OPEN RECORD ↗</span></div>
-          </button>)}
+            <span className="file-stamp">OPEN CASE</span>
+          </div>
+          <div className="relative z-10 grid gap-5 sm:grid-cols-2">
+            {caseFileData.evidence.map((item, i) => {
+              return <button
+                data-testid={`button-evidence-${item.id}`}
+                onClick={() => setViewerIndex(i)}
+                className="evidence-tile file-card paper-panel group relative min-w-0 overflow-hidden p-4 text-left"
+                key={item.id}
+              >
+                <span className="evidence-pin" aria-hidden="true" />
+                <div className={`evidence-print relative mb-5 bg-[#cbc5b9] p-2 pb-4 shadow-[5px_6px_0_rgba(0,0,0,0.22)] transition-transform duration-300 group-hover:rotate-0 ${i % 2 === 0 ? '-rotate-[.65deg]' : 'rotate-[.65deg]'}`}>
+                  <ImageOrPlaceholder src={item.image} className="aspect-[4/3] w-full object-cover" label={`Evidence ${item.id}`} />
+                  <div className="absolute right-4 top-4 rotate-6 border border-[#a53a36] bg-[#242426]/85 px-2 py-1 mono text-[8px] tracking-wider text-[#c77b70]">EXHIBIT / {String(i + 1).padStart(2, '0')}</div>
+                </div>
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <div className="mono text-[8px] tracking-[.13em] text-[#8d8980]">EVIDENCE FILE #{item.id}</div>
+                    <div className="mono mt-2 text-[9px] tracking-[.12em] text-[#b34a43]">{item.label}</div>
+                  </div>
+                  <span className="shrink-0 border border-[#403c36] px-2 py-1 mono text-[8px] text-[#9c968b]">{item.date}</span>
+                </div>
+                <p className="mt-4 min-h-[48px] text-xs leading-5 text-[#c6c1b7]">“{item.caption}”</p>
+                <div className="mt-3 flex items-center justify-between gap-2 border-t border-[#393735] pt-3 mono text-[8px] text-[#77736b]">
+                  <span className="truncate">LOC: {item.location}</span>
+                  <span className="flex shrink-0 items-center gap-1 text-[#a79b83]">OPEN RECORD <ArrowRight size={11} className="transition-transform group-hover:translate-x-1" /></span>
+                </div>
+              </button>;
+            })}
+          </div>
         </div>
       </section>
 
