@@ -8,7 +8,7 @@ export const caseFileData = {
     name: 'Priyansh',
     nickname: '[NICKNAME NOT PROVIDED]',
     age: '16',
-    city: '[CITY NOT PROVIDED]',
+    city: 'Kishangarh',
     birthdayMonthDay: '10-10',
     caseYear: '2010',
     occupation: 'Professional Menace',
@@ -22,7 +22,7 @@ export const caseFileData = {
       '[INSIDE JOKE — ADD LATER]',
     ],
     status: 'Still somehow getting away with everything.',
-    portrait: '',
+    portrait: '/subject-portrait.jpeg',
   },
   evidence: [
     { id: '017', date: '[DATE]', location: '[LOCATION]', label: 'UNEXPLAINED SCENE', caption: 'Investigators still don’t know what was happening here.', image: '' },

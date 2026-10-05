@@ -151,7 +151,7 @@ function App() {
       <section id="subject" className="section-shell scroll-mt-8">
         <SectionHeading eyebrow="Subject dossier" title="The Subject" index="01" />
         <div className="grid gap-8 lg:grid-cols-[.92fr_1.08fr]">
-          <ImageOrPlaceholder src={person.portrait} className="min-h-[340px] w-full sm:min-h-[430px]" label="Subject portrait, not supplied" />
+          <ImageOrPlaceholder src={person.portrait} className="aspect-[4/5] w-full object-cover object-bottom" label={`Portrait of ${person.name}`} />
           <div className="paper-panel p-6 sm:p-8">
             <div className="mb-6 flex items-center justify-between border-b border-[#3d3b38] pb-4"><span className="eyebrow">SUBJECT PROFILE</span><span className="file-stamp">ACTIVE</span></div>
             <div className="grid grid-cols-2 gap-x-6 gap-y-4 mono text-[10px] sm:text-xs">
