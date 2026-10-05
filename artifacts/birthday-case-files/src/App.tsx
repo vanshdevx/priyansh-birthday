@@ -35,10 +35,13 @@ function App() {
   const [accessGranted, setAccessGranted] = useState(false);
   const [viewerIndex, setViewerIndex] = useState<number | null>(null);
   const [answers, setAnswers] = useState<Record<number, number>>({});
+  const [policeCaseNoteVisible, setPoliceCaseNoteVisible] = useState(false);
+  const [policeCaseNoteKey, setPoliceCaseNoteKey] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioError, setAudioError] = useState(false);
   const [closedResponse, setClosedResponse] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const policeCaseNoteTimeoutRef = useRef<number | null>(null);
   const person = caseFileData.subject;
 
   useEffect(() => {
@@ -52,7 +55,25 @@ function App() {
     return () => window.removeEventListener('keydown', handleKey);
   }, [viewerIndex]);
 
+  useEffect(() => () => {
+    if (policeCaseNoteTimeoutRef.current !== null) window.clearTimeout(policeCaseNoteTimeoutRef.current);
+  }, []);
+
   const openSection = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const handleAnswer = (questionIndex: number, optionIndex: number) => {
+    setAnswers((old) => ({ ...old, [questionIndex]: optionIndex }));
+    if (questionIndex !== 0) return;
+    if (policeCaseNoteTimeoutRef.current !== null) window.clearTimeout(policeCaseNoteTimeoutRef.current);
+    policeCaseNoteTimeoutRef.current = null;
+    setPoliceCaseNoteVisible(optionIndex === 0);
+    if (optionIndex === 0) {
+      setPoliceCaseNoteKey((key) => key + 1);
+      policeCaseNoteTimeoutRef.current = window.setTimeout(() => {
+        setPoliceCaseNoteVisible(false);
+        policeCaseNoteTimeoutRef.current = null;
+      }, 2000);
+    }
+  };
   const toggleMusic = async () => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -190,11 +211,12 @@ function App() {
             {caseFileData.questions.map((item, index) => <div key={item.question}>
               <div className="mb-3 flex gap-3"><span className="mono text-[10px] text-[#a23a36]">Q0{index + 1}</span><h3 className="mono text-[10px] leading-5 tracking-[.06em] text-[#d5d0c7] sm:text-xs">{item.question}</h3></div>
               <div className="grid grid-cols-2 gap-3">
-                {item.options.map((option, optionIndex) => <button key={option} data-testid={`button-answer-${index}-${optionIndex}`} onClick={() => setAnswers((old) => ({ ...old, [index]: optionIndex }))} className={`min-h-12 border px-4 text-left mono text-[10px] tracking-wider transition-colors ${answers[index] === optionIndex ? 'border-[#906e42] bg-[#322b20] text-[#e1d1ad]' : 'border-[#44413c] bg-[#1c1d1e] text-[#aaa59b] hover:border-[#82413a] hover:text-[#e1dcd2]'}`}>
+                {item.options.map((option, optionIndex) => <button key={option} data-testid={`button-answer-${index}-${optionIndex}`} onClick={() => handleAnswer(index, optionIndex)} className={`min-h-12 border px-4 text-left mono text-[10px] tracking-wider transition-colors ${answers[index] === optionIndex ? 'border-[#906e42] bg-[#322b20] text-[#e1d1ad]' : 'border-[#44413c] bg-[#1c1d1e] text-[#aaa59b] hover:border-[#82413a] hover:text-[#e1dcd2]'}`}>
                   <span className="mr-2 text-[#9e3b37]">{optionIndex === 0 ? 'A /' : 'B /'}</span>{option}
                 </button>)}
               </div>
               {answers[index] !== undefined && <p role="status" className="mt-3 mono text-[10px] text-[#a78f5d]">{answers[index] === item.answer ? 'CORRECT. THIS WAS OBVIOUS.' : 'INCORRECT. INVESTIGATORS ARE DISAPPOINTED.'}</p>}
+                {index === 0 && policeCaseNoteVisible && answers[index] === 0 && <p key={policeCaseNoteKey} aria-live="polite" className="police-case-note mt-2 mono text-[9px]">maybe because of a police case</p>}
             </div>)}
           </div>
           <div className="mt-8 border-t border-[#3b3936] pt-4 mono text-[9px] text-[#706c65]">TRANSCRIPT MAY BE EDITED BY THE SUBJECT. NO APPEAL PROCESS.</div>

@@ -38,11 +38,11 @@ export const caseFileData = {
     reflection: 'But it’d be pretty cool if we got to look back at all this one day and realize we actually made it.',
   },
   questions: [
-    { question: 'WHO IS MORE LIKELY TO BECOME FAMOUS?', options: ['SUBJECT A', 'SUBJECT B'], answer: 0 },
-    { question: 'WHO MAKES WORSE DECISIONS?', options: ['SUBJECT A', 'SUBJECT B'], answer: 1 },
-    { question: 'WHO SURVIVES A ZOMBIE APOCALYPSE?', options: ['SUBJECT A', 'SUBJECT B'], answer: 0 },
-    { question: 'WHO BECOMES RICH FIRST?', options: ['SUBJECT A', 'SUBJECT B'], answer: 1 },
-    { question: 'WHO DISAPPEARS FOR SIX MONTHS AND RETURNS WITH A NEW PERSONALITY?', options: ['SUBJECT A', 'SUBJECT B'], answer: 0 },
+    { question: 'WHO IS MORE LIKELY TO BECOME FAMOUS?', options: ['Priyansh', 'Vansh'], answer: 0 },
+    { question: 'WHO MAKES WORSE DECISIONS?', options: ['Priyansh', 'Vansh'], answer: 1 },
+    { question: 'WHO SURVIVES A ZOMBIE APOCALYPSE?', options: ['Priyansh', 'Vansh'], answer: 1 },
+    { question: 'WHO IS THE MAIN CHARACTER OF THIS CASE FILE?', options: ['Priyansh', 'Vansh'], answer: 0 },
+    { question: 'WHO DISAPPEARS FOR SIX MONTHS AND RETURNS WITH A NEW PERSONALITY?', options: ['Priyansh', 'Vansh'], answer: 1 },
   ],
   finalTransmission: {
     portrait: '',
