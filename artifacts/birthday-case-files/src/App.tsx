@@ -71,7 +71,7 @@ function App() {
       policeCaseNoteTimeoutRef.current = window.setTimeout(() => {
         setPoliceCaseNoteVisible(false);
         policeCaseNoteTimeoutRef.current = null;
-      }, 2000);
+      }, 3000);
     }
   };
   const toggleMusic = async () => {
