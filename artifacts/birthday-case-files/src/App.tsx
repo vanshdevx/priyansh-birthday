@@ -27,8 +27,27 @@ function PhotoPlaceholder({ className = '', label = 'IMAGE NOT ON FILE' }: { cla
   </div>;
 }
 
-function ImageOrPlaceholder({ src, className, label }: { src: string; className: string; label: string }) {
-  return src ? <img src={src} alt={label} className={className} /> : <PhotoPlaceholder className={className} label={label} />;
+function isVideoAsset(src: string) {
+  return /\.(mp4|webm|ogg|mov)(\?.*)?$/i.test(src);
+}
+
+function MediaOrPlaceholder({ src, className, label, muted = true, autoPlay = false, loop = false, controls = false }: { src: string; className: string; label: string; muted?: boolean; autoPlay?: boolean; loop?: boolean; controls?: boolean }) {
+  if (!src) return <PhotoPlaceholder className={className} label={label} />;
+
+  if (isVideoAsset(src)) {
+    return <video
+      src={src}
+      muted={muted}
+      autoPlay={autoPlay}
+      loop={loop}
+      controls={controls}
+      playsInline
+      className={className}
+      aria-label={label}
+    />;
+  }
+
+  return <img src={src} alt={label} className={className} />;
 }
 
 function App() {
@@ -151,7 +170,7 @@ function App() {
       <section id="subject" className="section-shell scroll-mt-8">
         <SectionHeading eyebrow="Subject dossier" title="The Subject" index="01" />
         <div className="grid gap-8 lg:grid-cols-[.92fr_1.08fr]">
-          <ImageOrPlaceholder src={person.portrait} className="aspect-[4/5] w-full object-cover object-bottom" label={`Portrait of ${person.name}`} />
+          <MediaOrPlaceholder src={person.portrait} className="aspect-[4/5] w-full object-cover object-bottom" label={`Portrait of ${person.name}`} />
           <div className="paper-panel p-6 sm:p-8">
             <div className="mb-6 flex items-center justify-between border-b border-[#3d3b38] pb-4"><span className="eyebrow">SUBJECT PROFILE</span><span className="file-stamp">ACTIVE</span></div>
             <div className="grid grid-cols-2 gap-x-6 gap-y-4 mono text-[10px] sm:text-xs">
@@ -197,7 +216,7 @@ function App() {
               >
                 <span className="evidence-pin" aria-hidden="true" />
                 <div className={`evidence-print relative mb-5 bg-[#cbc5b9] p-2 pb-4 shadow-[5px_6px_0_rgba(0,0,0,0.22)] transition-transform duration-300 group-hover:rotate-0 ${i % 2 === 0 ? '-rotate-[.65deg]' : 'rotate-[.65deg]'}`}>
-                  <ImageOrPlaceholder src={item.image} className="aspect-[4/3] w-full object-cover" label={`Evidence ${item.id}`} />
+                  <MediaOrPlaceholder src={item.image} className="aspect-[4/3] w-full object-cover" label={`Evidence ${item.id}`} muted autoPlay loop />
                   <div className="absolute right-4 top-4 rotate-6 border border-[#a53a36] bg-[#242426]/85 px-2 py-1 mono text-[8px] tracking-wider text-[#c77b70]">EXHIBIT / {String(i + 1).padStart(2, '0')}</div>
                 </div>
                 <div className="flex items-start justify-between gap-3">
@@ -289,7 +308,7 @@ function App() {
     {currentEvidence && viewerIndex !== null && <div role="dialog" aria-modal="true" aria-label={`Evidence ${currentEvidence.id}`} className="fixed inset-0 z-50 flex items-center justify-center bg-[#050607]/95 p-4 backdrop-blur-sm" onClick={() => setViewerIndex(null)}>
       <div className="relative w-full max-w-4xl border border-[#494641] bg-[#17181a] p-4 sm:p-7" onClick={(event) => event.stopPropagation()}>
         <div className="mb-4 flex items-center justify-between mono text-[9px] tracking-[.14em] text-[#aaa399]"><span>EVIDENCE LOCKER / RECORD {currentEvidence.id}</span><button data-testid="button-close-viewer" onClick={() => setViewerIndex(null)} aria-label="Close evidence viewer" className="grid h-10 w-10 place-items-center border border-[#46433e] hover:border-[#9f3936]"><X size={17} /></button></div>
-        <ImageOrPlaceholder src={currentEvidence.image} className="max-h-[65vh] min-h-[260px] w-full object-contain" label={`Evidence ${currentEvidence.id} fullscreen`} />
+        <MediaOrPlaceholder src={currentEvidence.image} className="max-h-[65vh] min-h-[260px] w-full object-contain" label={`Evidence ${currentEvidence.id} fullscreen`} muted controls />
         <div className="mt-4 flex items-center justify-between gap-3">
           <button onClick={() => setViewerIndex((viewerIndex - 1 + caseFileData.evidence.length) % caseFileData.evidence.length)} aria-label="Previous evidence" className="grid h-11 w-11 place-items-center border border-[#45413b] hover:border-[#9c3733]"><ArrowLeft size={16} /></button>
           <div className="flex-1 text-center"><div className="mono text-[9px] text-[#a88c58]">{currentEvidence.label} / {currentEvidence.date} / {currentEvidence.location}</div><p className="mt-2 text-sm text-[#c9c3b9]">{currentEvidence.caption}</p></div>

@@ -1,0 +1,40 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run API Server",
+			"type": "shell",
+			"command": "pnpm --filter @workspace/api-server run dev",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Frontend App",
+			"type": "shell",
+			"command": "pnpm --filter @workspace/birthday-case-files run dev",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run API Server (PORT=5000)",
+			"type": "shell",
+			"command": "PORT=5000 pnpm --filter @workspace/api-server run dev",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run API Server (PORT=5001)",
+			"type": "shell",
+			"command": "PORT=5001 pnpm --filter @workspace/api-server run dev",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Frontend App (PORT=5173 BASE_PATH=/)",
+			"type": "shell",
+			"command": "PORT=5173 BASE_PATH=/ pnpm --filter @workspace/birthday-case-files run dev",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}
